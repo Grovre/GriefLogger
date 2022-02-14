@@ -1,0 +1,7 @@
+name: GriefLogger
+version: '${project.version}'
+main: me.grovre.grieflogger.GriefLogger
+api-version: 1.18
+authors: [ PoptartFromPluto ]
+description: Logs potential griefing
+website: https://github.com/grovre
