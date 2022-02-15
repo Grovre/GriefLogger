@@ -23,16 +23,16 @@ public class OnChestBreak implements Listener {
             return;
         }
 
-        Chest chest = (Chest) event.getBlock();
+        Chest chest = (Chest) event.getBlock().getState();
         UUID ownerUUID = GriefLogger.getChestOwner(chest);
         if(ownerUUID == null) {
             return;
         }
         OfflinePlayer owner = Bukkit.getOfflinePlayer(ownerUUID);
         Player chestBreaker = event.getPlayer();
-        if(chestBreaker.getUniqueId().equals(ownerUUID)) {
+        /*if(chestBreaker.getUniqueId().equals(ownerUUID)) {
             return;
-        }
+        }*/
         System.out.println(chestBreaker.getName() + " is breaking " + owner.getName() + "'s chest at " + GriefLogger.getXYZasStringFromLocation(chest.getLocation()));
     }
 

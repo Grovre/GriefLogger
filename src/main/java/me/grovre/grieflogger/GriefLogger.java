@@ -1,9 +1,12 @@
 package me.grovre.grieflogger;
 
 import me.grovre.grieflogger.listeners.OnTntIgnite;
+import me.grovre.grieflogger.listeners.chest.OnChestBreak;
 import me.grovre.grieflogger.listeners.chest.OnChestInteract;
 import me.grovre.grieflogger.listeners.chest.OnChestPlace;
 import me.grovre.grieflogger.listeners.chest.OnDoubleChestInteract;
+import me.grovre.grieflogger.listeners.spawner.OnSpawnerBreak;
+import me.grovre.grieflogger.listeners.spawner.OnSpawnerPlace;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Chest;
@@ -37,6 +40,9 @@ public final class GriefLogger extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnChestInteract(), this);
         getServer().getPluginManager().registerEvents(new OnDoubleChestInteract(), this);
         getServer().getPluginManager().registerEvents(new OnChestPlace(), this);
+        getServer().getPluginManager().registerEvents(new OnChestBreak(), this);
+        getServer().getPluginManager().registerEvents(new OnSpawnerPlace(), this);
+        getServer().getPluginManager().registerEvents(new OnSpawnerBreak(), this);
 
     }
 
