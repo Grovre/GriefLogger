@@ -24,11 +24,7 @@ public class OnChestInteract implements Listener {
             if(chest == null) {
                 throw new NullPointerException();
             }
-        } catch (ClassCastException e) {
-            return;
-        } catch (NullPointerException npe) {
-            System.out.println("Chest is null?");
-            npe.printStackTrace();
+        } catch (ClassCastException | NullPointerException e) {
             return;
         }
 

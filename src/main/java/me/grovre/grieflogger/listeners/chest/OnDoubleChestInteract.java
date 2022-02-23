@@ -25,11 +25,7 @@ public class OnDoubleChestInteract implements Listener {
             if(chest == null) {
                 throw new NullPointerException();
             }
-        } catch (ClassCastException e) {
-            return;
-        } catch (NullPointerException npe) {
-            System.out.println("Chest is null?");
-            npe.printStackTrace();
+        } catch (ClassCastException | NullPointerException e) {
             return;
         }
 
@@ -37,8 +33,8 @@ public class OnDoubleChestInteract implements Listener {
         UUID chestOwnerUUID = GriefLogger.getChestOwner(chest);
         if(chestOwnerUUID == null) {
             GriefLogger.setChestOwner(chest, interactingPlayer.getUniqueId());
+            chestOwnerUUID = GriefLogger.getChestOwner(chest);
         }
-        assert chestOwnerUUID != null;
         OfflinePlayer chestOwner = Bukkit.getOfflinePlayer(chestOwnerUUID);
         if(interactingPlayer.getUniqueId().equals(chestOwnerUUID)) {
             return;
