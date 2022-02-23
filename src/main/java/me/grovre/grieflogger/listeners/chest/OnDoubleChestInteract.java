@@ -35,6 +35,7 @@ public class OnDoubleChestInteract implements Listener {
             GriefLogger.setChestOwner(chest, interactingPlayer.getUniqueId());
             chestOwnerUUID = GriefLogger.getChestOwner(chest);
         }
+        assert chestOwnerUUID != null;
         OfflinePlayer chestOwner = Bukkit.getOfflinePlayer(chestOwnerUUID);
         if(interactingPlayer.getUniqueId().equals(chestOwnerUUID)) {
             return;
